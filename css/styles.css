@@ -1,3 +1,13 @@
 body {
   margin-top: 30px;
 }
+
+#trapezoid {
+	border-bottom: 25em solid lightgrey;
+	border-left: 25em solid transparent;
+	border-right: 25em solid transparent;
+	height: 25em;
+	width: 80em;
+  position: fixed;
+  margin-top: 40em;
+}
