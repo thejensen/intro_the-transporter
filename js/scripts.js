@@ -1,3 +1,4 @@
+
 // business logic
 
 var spaceProps = {
@@ -29,11 +30,14 @@ function communicate(input) {
 }
 
 // array of images that will show in the pilot window
+
 var pictureArray = ["url('../img/hyperspeed.gif')", "url('../img/prehistoric background.jpg')", "url('../img/futureCity1.jpg')"];
+
 var colorArray = ["brown", "blue", "red"];
 function changeDisplay(DOMElement, pictureArray, i){
   $(DOMElement).css("background-image", pictureArray[i]); //change background-color to background-image once we have images
 }
+
 
 // switches color of console from grey to red
 function switchColor(color) {
