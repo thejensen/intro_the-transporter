@@ -25,10 +25,7 @@ _No known bugs_
 
 ## Support and contact details
 
-_If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us!
-
-Sara Jensen: jensen.sara.e@gmail.com
-etc._
+_If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us! Sara Jensen: jensen.sara.e@gmail.com_
 
 ## Technologies Used
 
