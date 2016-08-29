@@ -58,10 +58,19 @@ $(document).ready(function() {
   });
 // pops up that goat
   $("#goat").click(function() {
-    $("#goat").append("<img src='./img/goat glasses.gif'>");
+    if ($("#goat").html() === ("")) {
+      $("#goat").append("<img src='./img/goat glasses.gif'>")
+    } else {
+      $("#goat").children().remove();
+    }
   });
 // hologram NEEDS IMAGGGEEEE whose background is edited out in pixlr
   $("#hologram").click(function() {
-    $("#hologram").append("<img src=''>")
+    if ($("#hologram").html() === ("")) {
+      $("#hologram").append("<img src='./img/tupac.png'>")
+    } else {
+      $("#hologram").children().remove();
+    }
   });
+
 });
