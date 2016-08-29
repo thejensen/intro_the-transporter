@@ -1,15 +1,23 @@
+
+// business logic
+
+// array of images that will show in the pilot window
+
 var pictureArray = ["url('../img/picture1.jpg')", "url('../img/picture2.jpg')", "url('../img/picture3.jpg')"];
 var colorArray = ["brown", "blue", "red"];
 function changeDisplay(DOMElement, pictureArray, id){
   $(DOMElement).css("background-color", pictureArray[id]); //change background-color to background-image once we have images
 }
 
+
+// switches color of console from grey to red
+function switchColor(color) {
+  $("#trapezoid").css("border-bottom", "25em solid red");
+  $("#triangle-left ").css("border-right", "35em solid red");
+  $("#triangle-right").css("border-left", "35em solid red");
+}
+
 $(document).ready(function() {
   $("#switchColor").click(function(){
-    if ($(".console").css("background-color") === "grey"{
-      $(".console").css("background-color", "red");
-    } else {
-      $(".console").css("background-color", "grey");
-    }
-  });
-});
+    switchColor();
+  }
