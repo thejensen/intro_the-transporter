@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _The Transporter_
 
 #### _{Brief description of application}, {Date of current version}_
 
-#### By _**{List of contributors}**_
+#### By Sara Jensen, Josh Huffman, Tim Bourgault, Dean Scelza
 
 ## Description
 
