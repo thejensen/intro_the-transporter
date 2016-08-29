@@ -1,5 +1,14 @@
 // business logic
 
+var spaceProps = {
+  background = "url('../img/')"
+}
+
+// handles input from textbox
+function communicate(input) {
+  return "Hello there " + input + ".";
+}
+
 // array of images that will show in the pilot window
 var pictureArray = ["url('../img/picture1.jpg')", "url('../img/picture2.jpg')", "url('../img/picture3.jpg')"];
 var colorArray = ["brown", "blue", "red"];
@@ -17,4 +26,9 @@ function switchColor(color) {
 $(document).ready(function() {
   $("#switchColor").click(function(){
     switchColor();
-  }
+  });
+  $("#textSubmit").click(function(){
+    var input = $("#textInput").val();
+    alert(communicate(input));
+  });
+});
