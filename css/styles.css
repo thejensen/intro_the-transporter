@@ -6,8 +6,31 @@ body {
 	border-bottom: 25em solid lightgrey;
 	border-left: 25em solid transparent;
 	border-right: 25em solid transparent;
-	height: 25em;
-	width: 80em;
+	height: 30em;
+	width: 81em;
   position: fixed;
   margin-top: 40em;
+}
+
+#triangle-left {
+	width: 0em;
+	height: 0em;
+	border-top: 15em  solid transparent;
+	border-right: 35em solid lightgrey;
+	border-bottom: 35em solid transparent;
+  margin-left: 55em;
+  margin-top: 35em;
+  position: fixed;
+
+}
+
+#triangle-right {
+	width: 0em;
+	height: 0em;
+	border-top: 15em solid transparent;
+	border-left: 35em solid lightgrey;
+	border-bottom: 35em solid transparent;
+  margin-top: 35em;
+  margin-left: -8.4em;
+  position: fixed ;
 }
