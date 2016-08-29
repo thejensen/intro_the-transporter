@@ -35,9 +35,8 @@ var pictureArray = ["url('./img/hyperspeed.gif')", "url('./img/prehistoric backg
 
 var colorArray = ["brown", "blue", "red"];
 function changeDisplay(DOMElement, pictureArray, i){
-  $(DOMElement).css("background-image", pictureArray[i]); //change background-color to background-image once we have images
+  $(DOMElement).css("background-image" , pictureArray[i]); //change background-color to background-image once we have images
 }
-
 
 // switches color of console from grey to red
 function switchColor(color) {
@@ -45,6 +44,7 @@ function switchColor(color) {
   $("#triangle-left ").css("border-right", "35em solid red");
   $("#triangle-right").css("border-left", "35em solid red");
 }
+
 
 $(document).ready(function() {
   var newState = new State();
@@ -56,4 +56,13 @@ $(document).ready(function() {
     newState.textInput = input;
     alert(communicate(input));
   });
+// pops up that goat
+  $("#goat").click(function() {
+    $("#goat").append("<img src='./img/goat glasses.gif'>");
+  });
+// hologram NEEDS IMAGGGEEEE whose background is edited out in pixlr
+  $("#hologram").click(function() {
+    $("#hologram").append("<img src=''>")
+  });
+
 });

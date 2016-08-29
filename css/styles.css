@@ -2,6 +2,10 @@ body {
   margin-top: 30px;
 }
 
+#window {
+  /*height: 100px; */ will adjust height of window image when console is repositioned
+}
+
 #trapezoid {
 	border-bottom: 25em solid lightgrey;
 	border-left: 25em solid transparent;
