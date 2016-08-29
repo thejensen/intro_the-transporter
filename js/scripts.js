@@ -5,5 +5,11 @@ function changeDisplay(DOMElement, pictureArray, id){
 }
 
 $(document).ready(function() {
-
+  $("#switchColor").click(function(){
+    if ($(".console").css("background-color") === "grey"{
+      $(".console").css("background-color", "red");
+    } else {
+      $(".console").css("background-color", "grey");
+    }
+  });
 });
