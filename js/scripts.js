@@ -2,19 +2,19 @@
 // business logic
 
 var spaceProps = {
-  background : "url('../img/hyperspeed.gif')",
+  background : "url('./img/hyperspeed.gif')",
   consoleColor : "blue",
   response : "You are now in control of the spaceship. Pull the lever to choose where to go"
 }
 
 var prehistoricProps = {
-  background : "url('../img/prehistoric background.jpg')",
+  background : "url('./img/prehistoric background.jpg')",
   consoleColor : "red",
   response : "You have landed with the dinosaurs.  Watch out!"
 }
 
 var futureProps = {
-  background : "url('../img/futureCity1.jpg')",
+  background : "url('./img/futureCity1.jpg')",
   consoleColor : "black",
   reponse : "You are now in the future."
 }
@@ -31,7 +31,7 @@ function communicate(input) {
 
 // array of images that will show in the pilot window
 
-var pictureArray = ["url('../img/hyperspeed.gif')", "url('../img/prehistoric background.jpg')", "url('../img/futureCity1.jpg')"];
+var pictureArray = ["url('./img/hyperspeed.gif')", "url('./img/prehistoric background.jpg')", "url('./img/futureCity1.jpg')"];
 
 var colorArray = ["brown", "blue", "red"];
 function changeDisplay(DOMElement, pictureArray, i){
