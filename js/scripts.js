@@ -64,5 +64,4 @@ $(document).ready(function() {
   $("#hologram").click(function() {
     $("#hologram").append("<img src=''>")
   });
-
 });
