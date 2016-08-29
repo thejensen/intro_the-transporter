@@ -1,36 +1,89 @@
 body {
   margin-top: 30px;
+  border-top: 50px solid lightgrey;
 }
 
-#trapezoid {
-	border-bottom: 25em solid lightgrey;
-	border-left: 25em solid transparent;
-	border-right: 25em solid transparent;
-	height: 30em;
-	width: 81em;
+#triangle-topleft {
+	width: 0;
+	height: 0;
+	border-top: 100px solid red;
+	border-right: 100px solid transparent;
+
+}
+
+#triangle-topright {
+	width: 0;
+	height: 0;
+	border-top: 500px solid black;
+	border-left: 200px solid transparent;
   position: fixed;
-  margin-top: 40em;
+  margin-left: 40em;
+  margin-bottom:80em;
+}
+
+#rectangle {
+	width: 180em;
+	height: 25em;
+  background: lightgrey;
+  position: fixed;
+  margin-left: -45em;
+  margin-top: 60em;
+}
+
+
+#yin-yang {
+	width: 96px;
+	height: 48px;
+	background: #eee;
+	border-color: red;
+	border-style: solid;
+	border-width: 2px 2px 50px 2px;
+	border-radius: 100%;
+	position: relative;
+}
+
+#yin-yang:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	background: #eee;
+	border: 18px solid red;
+	border-radius: 100%;
+	width: 12px;
+	height: 12px;
+}
+
+#yin-yang:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background: red;
+	border: 18px solid #eee;
+	border-radius:100%;
+	width: 12px;
+	height: 12px;
 }
 
 #triangle-left {
 	width: 0em;
 	height: 0em;
 	border-top: 15em  solid transparent;
-	border-right: 35em solid lightgrey;
-	border-bottom: 35em solid transparent;
-  margin-left: 55em;
-  margin-top: 35em;
+	border-right: 45em solid lightgrey;
+	border-bottom: 37em solid transparent;
+  margin-left: 87em;
+  margin-top: 45em;
   position: fixed;
-
 }
 
 #triangle-right {
 	width: 0em;
 	height: 0em;
 	border-top: 15em solid transparent;
-	border-left: 35em solid lightgrey;
-	border-bottom: 35em solid transparent;
-  margin-top: 35em;
-  margin-left: -8.4em;
+	border-left: 45em solid lightgrey;
+	border-bottom: 37em solid transparent;
+  margin-top: 45em;
+  margin-left: -50.5em;
   position: fixed ;
 }
