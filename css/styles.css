@@ -1,5 +1,6 @@
 body {
   margin-top: 30px;
+  background-image: url("../img/futureCity1.jpg");
   background-repeat: no-repeat;
 }
 
@@ -8,53 +9,123 @@ body {
   /*height: 100px; */ will adjust height of window image when console is repositioned
 }
 
-#trapezoid {
-	border-bottom: 25em solid lightgrey;
-	border-left: 25em solid transparent;
-	border-right: 25em solid transparent;
-	height: 30em;
-	width: 81em;
-  position: fixed;
-  margin-top: 40em;
-}
 
-#triangle-left {
-	width: 0em;
-	height: 0em;
-	border-top: 15em  solid transparent;
-	border-right: 35em solid lightgrey;
-	border-bottom: 35em solid transparent;
-  margin-left: 55em;
-  margin-top: 35em;
-  position: fixed;
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
 
 }
 
-#triangle-right {
-	width: 0em;
-	height: 0em;
-	border-top: 15em solid transparent;
-	border-left: 35em solid lightgrey;
-	border-bottom: 35em solid transparent;
-  margin-top: 35em;
-  margin-left: -8.4em;
-  position: fixed ;
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: grey;
+  height: 150%;
+}
+.sidenav img {
+  width: 28em;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: transparent black;
+  color: white;
+  padding: 15px;
+
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
 }
 
 #goat {
-  border: 2px solid green;
-  height: 20px;
-  width: 20px;
+  border: 3px solid green;
+  background-color: lightgreen;
+  height: 22%;
+  width: 100%;
+  margin: 0% 10% 5% 0%;
 }
 
 #hologram{
-  border: 3px solid yellow;
-  height: 20px;
-  width: 20px;
+  border: 3px solid gold;
+  background-color: lightyellow;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 5% 0%;
 }
 
 #switchColor{
   border: 3px solid blue;
-  height: 20px;
-  width: 20px;
+  background-color: lightblue;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 0% 0%;
+}
+
+#nameInput {
+  border: 3px solid purple;
+  background-color: lavender;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 0% 0%;
+}
+
+#teleporter {
+  border: 3px solid red;
+  background-color: pink;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 0% 0%;
+}
+
+
+.well {
+  height: 22%;
+  background-color: lightgrey;
+}
+
+
+#trapezoid {
+ border-bottom: 25em solid grey;
+ border-left: 25em solid transparent;
+ border-right: 25em solid transparent;
+ height: 30em;
+ width: 99em;
+ position: fixed;
+ margin-top: 0em;
+ margin-left: -10em;
+
+}
+
+#triangle-left {
+ width: 0em;
+ height: 0em;
+ border-top: 20em  solid transparent;
+ border-right: 35em solid grey;
+ border-bottom: 35em solid transparent;
+ margin-left: 97.2em;
+ margin-top: 0em;
+ position: fixed;
+
+}
+
+#triangle-right {
+ width: 0em;
+ height: 0em;
+ border-top: 20em solid transparent;
+ border-left: 35em solid grey;
+ border-bottom: 35em solid transparent;
+ margin-top: 0em;
+ margin-left: -50.7em;
+ position: fixed;
+
 }
