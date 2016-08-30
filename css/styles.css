@@ -1,7 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
-  margin-top: 30px;
-  background-image: url("../img/futureCity1.jpg");
+  background-image: url("../img/inflated-city.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #window {
@@ -14,6 +18,7 @@ body {
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  margin-top: 0;
 
 }
 
@@ -23,11 +28,17 @@ body {
 /* Set gray background color and 100% height */
 .sidenav {
   padding-top: 20px;
-  background-color: grey;
+  background-color: transparent;
   height: 150%;
 }
+
 .sidenav img {
   width: 28em;
+}
+
+#biostatus {
+  margin-right: 12em;
+  position: relative;
 }
 
 /* Set black background color, white text and some padding */
@@ -47,44 +58,50 @@ footer {
   .row.content {height:auto;}
 }
 
+#teleporter {
+  border: 3px solid red;
+  background-color: pink;
+  height: 15%;
+  width: 50%;
+  margin: 0% 10% 0% 3%;
+}
+
 #goat {
   border: 3px solid green;
   background-color: lightgreen;
-  height: 22%;
-  width: 100%;
-  margin: 0% 10% 5% 0%;
+  height: 15%;
+  width: 50%;
+  margin: 10% 10% 5% 7%;
 }
 
 #hologram{
   border: 3px solid gold;
   background-color: lightyellow;
-  height: 22%;
-  width: 100%;
-  margin: 10% 10% 5% 0%;
+  height: 15%;
+  width: 50%;
+  margin: 10% 10% 5% 13%;
+  text-align: center;
 }
 
 #switchColor{
   border: 3px solid blue;
   background-color: lightblue;
-  height: 22%;
-  width: 100%;
-  margin: 10% 10% 0% 0%;
+  height: 15%;
+  width: 50%;
+  margin: 10% 10% 0% 23%;
 }
 
 #nameInput {
-  border: 3px solid purple;
-  background-color: lavender;
-  height: 22%;
-  width: 100%;
-  margin: 10% 10% 0% 0%;
+  border: 3px solid transparent;
+  background-color: transparent;
+  height: 0%;
+  width: 25%;
+  margin: 10% 10% 0% 35%;
+  text-align: center;
 }
 
-#teleporter {
-  border: 3px solid red;
-  background-color: pink;
-  height: 22%;
-  width: 100%;
-  margin: 10% 10% 0% 0%;
+#name {
+  border: 3px solid black;
 }
 
 
@@ -93,39 +110,46 @@ footer {
   background-color: lightgrey;
 }
 
-
-#trapezoid {
- border-bottom: 25em solid grey;
+#trapezoid1 {
+ border-bottom: 25em solid black;
  border-left: 25em solid transparent;
  border-right: 25em solid transparent;
  height: 30em;
- width: 99em;
+ width: 170em;
  position: fixed;
- margin-top: 0em;
- margin-left: -10em;
-
+ margin-top: 10em;
+ margin-left: -45em;
 }
 
-#triangle-left {
+#trapezoid2 {
+ border-bottom: 25em solid grey;
+ border-left: 25em solid transparent;
+ border-right: 25em solid transparent;
+ height: 20em;
+ width: 140em;
+ position: fixed;
+ margin-top: 10em;
+ margin-left: -10em;
+}
+
+#triangle-left1 {
  width: 0em;
  height: 0em;
  border-top: 20em  solid transparent;
- border-right: 35em solid grey;
+ border-right: 35em solid black;
  border-bottom: 35em solid transparent;
  margin-left: 97.2em;
  margin-top: 0em;
  position: fixed;
-
 }
 
-#triangle-right {
+#triangle-right1 {
  width: 0em;
  height: 0em;
  border-top: 20em solid transparent;
- border-left: 35em solid grey;
+ border-left: 35em solid black;
  border-bottom: 35em solid transparent;
  margin-top: 0em;
  margin-left: -50.7em;
  position: fixed;
-
 }
