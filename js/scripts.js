@@ -1,14 +1,13 @@
-
 // business logic
 // sets the scenes with window background, console color and communications options when a player is in a certain state
 var spaceProps = {
   background : "url('./img/empty-space.jpg')",
-  consoleColor : "blue",
+  consoleColor : ["blue", "black", "purple"],
   response : "You are now in control of the spaceship. Pull the lever to choose where to go"
 }
 var prehistoricProps = {
   background : "url('./img/prehistoric background.jpg')",
-  consoleColor : "red",
+  consoleColor : ["red", "grey"],
   response : "You have landed with the dinosaurs.  Watch out!"
 }
 var futureProps = {
@@ -22,7 +21,7 @@ var allProps = [spaceProps, prehistoricProps, futureProps];
 function greeting(clickCounter, location, inputtedName) {
   if (location === 0){
     if (clickCounter === 1) {
-      return "Hello there " + inputtedName + ".";
+      return "Hello there, " + inputtedName + ".";
     } else if (clickCounter === 2) {
       return "Welcome to the Teleporter. Your presence has been documented. You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
     } else if (clickCounter === 3) {
@@ -53,12 +52,11 @@ function greeting(clickCounter, location, inputtedName) {
   }
 }
 
-
 // switches color of console from grey to red -- ******Will need to update with frontend changes to console layout*******
 function switchColor(color) {
-  $("body").css("border-bottom", "25em solid red");
-  $("footer").css("border-right", "35em solid red");
-  $(".navbar").css("border-left", "35em solid red");
+  $("#trapezoid").css("border-bottom", "25em solid red");
+  $("#triangle-left").css("border-right", "35em solid red");
+  $("#triangle-right").css("border-left", "35em solid red");
 }
 
 $(document).ready(function() {
@@ -89,18 +87,14 @@ $(document).ready(function() {
   });
 // pops up that goat
   $("#goat").click(function() {
-    if ($("#goat").html() === ("")) {
-      $("#goat").append("<img src='./img/goat glasses.gif'>")
-    } else {
-      $("#goat").children().remove();
-    }
+    $("#goatdiv").slideToggle();
   });
-// hologram NEEDS IMAGGGEEEE whose background is edited out in pixlr
+// hologram
   $("#hologram").click(function() {
-    if ($("#hologram").html() === ("")) {
-      $("#hologram").append("<img src='./img/tupac.png'>")
+    if ($("#hologram-area").html() === ("")) {
+      $("#hologram-area").append("<img src='./img/superman.png'>");
     } else {
-      $("#hologram").children().remove();
+      $("#hologram-area").children().remove();
     }
   });
 });
