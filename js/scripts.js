@@ -40,9 +40,9 @@ function changeDisplay(DOMElement, pictureArray, i){
 
 // switches color of console from grey to red
 function switchColor(color) {
-  $("#trapezoid").css("border-bottom", "25em solid red");
-  $("#triangle-left ").css("border-right", "35em solid red");
-  $("#triangle-right").css("border-left", "35em solid red");
+  $("body").css("border-bottom", "25em solid red");
+  $("footer").css("border-right", "35em solid red");
+  $(".navbar").css("border-left", "35em solid red");
 }
 
 

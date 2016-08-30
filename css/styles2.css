@@ -1,0 +1,112 @@
+body {
+  margin-top: 30px;
+  background-image: url("../img/futureCity1.jpg");
+}
+
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: grey;
+  height: 150%;
+}
+.sidenav img {
+  width: 28em;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: transparent black;
+  color: white;
+  padding: 15px;
+
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+#goat {
+  border: 3px solid green;
+  background-color: lightgreen;
+  height: 22%;
+  width: 100%;
+  margin: 0% 10% 5% 0%;
+
+}
+
+#hologram{
+  border: 3px solid gold;
+  background-color: lightyellow;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 5% 0%;
+
+}
+
+#switchColor{
+  border: 3px solid blue;
+  background-color: lightblue;
+  height: 22%;
+  width: 100%;
+  margin: 10% 10% 0% 0%;
+
+}
+
+.well {
+  height: 22%;
+  background-color: lightgrey;
+
+}
+
+
+#trapezoid {
+ border-bottom: 25em solid grey;
+ border-left: 25em solid transparent;
+ border-right: 25em solid transparent;
+ height: 30em;
+ width: 99em;
+ position: fixed;
+ margin-top: 0em;
+ margin-left: -10em;
+
+}
+
+#triangle-left {
+ width: 0em;
+ height: 0em;
+ border-top: 20em  solid transparent;
+ border-right: 35em solid grey;
+ border-bottom: 35em solid transparent;
+ margin-left: 97.2em;
+ margin-top: 0em;
+ position: fixed;
+
+}
+
+#triangle-right {
+ width: 0em;
+ height: 0em;
+ border-top: 20em solid transparent;
+ border-left: 35em solid grey;
+ border-bottom: 35em solid transparent;
+ margin-top: 0em;
+ margin-left: -50.7em;
+ position: fixed;
+
+}
