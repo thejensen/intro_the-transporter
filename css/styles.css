@@ -1,6 +1,10 @@
+html {
+height: 100%;
+}
+
 body {
-  margin-top: 30px;
   background-image: url("../img/futureCity1.jpg");
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -103,7 +107,6 @@ footer {
  position: fixed;
  margin-top: 0em;
  margin-left: -10em;
-
 }
 
 #triangle-left {
@@ -115,7 +118,6 @@ footer {
  margin-left: 97.2em;
  margin-top: 0em;
  position: fixed;
-
 }
 
 #triangle-right {
@@ -127,5 +129,18 @@ footer {
  margin-top: 0em;
  margin-left: -50.7em;
  position: fixed;
+}
 
+#hologram-area {
+  height: 100%;
+}
+
+#hologram-area * {
+  position: absolute;
+  margin: 0;
+  top: 100%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
 }
