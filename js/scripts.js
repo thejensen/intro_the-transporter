@@ -1,5 +1,6 @@
 
 // business logic
+
 // sets the scenes with window background, console color and communications options when a player is in a certain state
 var spaceProps = {
   background : "url('./img/empty-space.jpg')",
@@ -22,11 +23,11 @@ var allProps = [spaceProps, prehistoricProps, futureProps];
 function greeting(clickCounter, location, inputtedName) {
   if (location === 0){
     if (clickCounter === 1) {
-      return "Hello there " + inputtedName + ".";
+      return "Hello there, " + inputtedName + ".";
     } else if (clickCounter === 2) {
       return "Welcome to the Teleporter. Your presence has been documented. You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
     } else if (clickCounter === 3) {
-      return "Stop pushing this button " + inputtedName + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
+      return "Stop pushing this button, " + inputtedName + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
     } else {
       return inputtedName + ". You have no friends."
     }
@@ -52,7 +53,6 @@ function greeting(clickCounter, location, inputtedName) {
     }
   }
 }
-
 
 // switches color of console from grey to red -- ******Will need to update with frontend changes to console layout*******
 function switchColor(color) {
@@ -83,9 +83,13 @@ $(document).ready(function() {
   });
 // let the alien communications begin
   $("#nameInput").click(function() {
-    clickCounter += 1;
-    var inputtedName = $("#name").val();
-    alert(greeting(clickCounter, location, inputtedName));
+    if ($("#name").val() === "") {
+      alert("To whom am I speaking?")
+    } else {
+      clickCounter += 1;
+      var inputtedName = $("#name").val();
+      alert(greeting(clickCounter, location, inputtedName));
+    }
   });
 // pops up that goat
   $("#goat").click(function() {
