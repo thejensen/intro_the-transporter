@@ -201,8 +201,10 @@ footer {
 }
 
 #goat-image {
+  width: 300px;
   border-radius: 600px;
   border: 10px double black;
+  box-shadow: 20px 180px 7px rgba(0,0,0,.3);
 }
 
 
@@ -283,8 +285,8 @@ footer {
 	}
 
 	.round:hover {
-		width: 300%;
-		height: 300%;
+		width: 200%;
+		height: 200%;
 		left: -15%;
 		top: -15%;
 		font-size: 33px;
