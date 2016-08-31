@@ -6,9 +6,9 @@ var spaceProps = {
   response : function(clickCounter, name) {
     if (clickCounter === 1) {
       $("#creature").fadeIn(9000);
-      return "Hello there, " + name + ", my name is Arithna'Jag. Since deep space can be a very lonely place, I am here to keep you company!  I love you!";
+      return "Hello, " + name + ". I am Arithna'Jag. Deep space can be a lonely place. I am here for you.";
     } else if (clickCounter === 2) {
-      return "You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
+      return "You may attempt to command the ship. Trial and error is your only option. This pleases me."
     } else if (clickCounter === 3) {
       return "Stop pushing this button " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
     } else {
@@ -51,14 +51,17 @@ var inflateProps = {
   consoleColor : ["red", "green", "gold"],
   response : function(clickCounter, name) {
     if (clickCounter === 1) {
-      return name + ", you 'ave entered the airspace of Zarthyep, the Inflated City. Here you will find the rarest of Spice collected from the dingiest depths of the galaxy."
+      return name + ", you have entered the airspace of Zarthyep, the Inflated City. The rarest spices collected from the depths of the galaxy can be found here."
     } else if (clickCounter === 2) {
-      return "All human cargo must be submitted for organ harvesting.";
+      return "All human cargo must be submitted for organ harvesting. The spices must spice something, after all.";
     } else if (clickCounter === 3) {
-      $("#merman").fadeIn(6000);
-      return "Since you have failed to comply with our regulations, and you persist in being a Geltch-Monger, we have released the Zroto Kliger to destroy you and your vessel!  Prepare to meet your fate " + name + "!!!";
+      $("#merman").fadeIn(2000);
+      return "You have failed to comply. Why must you persist in being a Geltch-Monger? We have released the Zroto Kliger to destroy you and your vessel. Prepare to meet your fate, " + name + ".";
     } else {
-      return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
+      $("#merman").click(function() {
+        document.location.reload();
+        setTimeout(10000, mermanEscape);
+      }
     }
   }
 }
@@ -145,6 +148,7 @@ $(document).ready(function() {
     }
   });
 
+// submit name
   $("#submit-name").click(function(){
     userName = $("#name").val();
     if (userName !== "") {
@@ -156,6 +160,7 @@ $(document).ready(function() {
     }
   })
 
+// dismiss inside communications
   $("#dismiss").click(function(){
     $("#communication-output").hide();
   });
