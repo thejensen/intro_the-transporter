@@ -38,7 +38,7 @@ var futureProps = {
     if (clickCounter === 1) {
       return "You have arrived."
     } else if (clickCounter === 2) {
-      return "Welcome to the future. Is it everything you hoped for, " + name + "? Don't worrry, the flying cars make up for the unbreatheable atmosphere.";
+      return "Welcome to the future. Is it everything you hoped for, " + name + "? Don't worry, the flying cars make up for the unbreatheable atmosphere.";
     } else if (clickCounter === 3) {
       return "If it were possible for you to evacuate this Teleporter, " + name + ", I would recommend it. There's a great coffee shop just down the street. But you can't, so..."
     } else {
@@ -58,6 +58,7 @@ var inflateProps = {
       $("#merman").fadeIn(6000);
       return "Since you have failed to comply with our regulations, and you persist in being a Geltch-Monger, we have released the Zroto Kliger to destroy you and your vessel!  Prepare to meet your fate " + name + "!!!";
     } else {
+      $("#merman").hide();
       return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
     }
   }
@@ -139,16 +140,27 @@ $(document).ready(function() {
       $("#hologram-figure").children().remove();
     }
 
-    // $("#radio-station").click(function() {
-    //
-    //   var newColor = allProps[location]["consoleColor"][colorCounter];
-    //   switchColor(newColor);
-    //   if(colorCounter === 2){
-    //     colorCounter = 0;
-    //   } else {
-    //     colorCounter ++;
-    //   }
-    // });
   });
 
+
+    $("#radio-station").click(function() {
+      var audioElement = document.createElement('audio');
+      audioElement.setAttribute('src', 'audio/spaceship.mp3');
+      audioElement.setAttribute('autoplay', 'autoplay');
+      audioElement.load()
+
+      $.get();
+
+      audioElement.addEventListener("load", function() {
+          audioElement.play();
+      }, true);
+
+      $('.play').click(function() {
+          audioElement.play();
+      });
+
+      $('.pause').click(function() {
+          audioElement.pause();
+      });
+    });
 });
