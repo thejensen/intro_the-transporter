@@ -1,4 +1,4 @@
-// business logic
+// BEGIN BUSINESS LOGIC
 // sets the scenes with window background, console color and communications options when a player is in a certain state
 var spaceProps = {
   background : "url('./img/empty-space.jpg')",
@@ -54,6 +54,7 @@ function switchColor(color) {
   $("#trapezoid2").css("border-bottom", toSend);
 }
 
+// BEGIN USER INTERFACE LOGIC
 $(document).ready(function() {
   var audio = new Audio('../audio/billygoat.mp3');
   var clickCounter = 0;
@@ -71,10 +72,11 @@ $(document).ready(function() {
       colorCounter ++;
     }
   });
+
 // teleporter changes the background image
   $("#teleporter").click(function() {
+    $("#communication-output").hide();
     $("body").css("background-image", "url('./img/hyperspace2.gif')");
-
     var hyperspeed = setTimeout(postHyperspeed, 1950);
     function postHyperspeed() {
       clickCounter = 0;
@@ -86,32 +88,38 @@ $(document).ready(function() {
       $("body").css("background-image", allProps[location]["background"]);
      }
     hyperspeed;
- });
-
+  });
 
 // let the alien communications begin
   $("#communicator").click(function() {
     console.log("button clicked");
     if ($("#name").val() === "") {
-      alert("To whom am I speaking?");
+      $("#communication-output").slideDown();
+      $("#communication-output").text("To whom am I speaking?");
+      $("#name").show();
     } else {
       clickCounter += 1;
       var inputtedName = $("#name").val();
-      console.log(allProps[location]["response"](clickCounter, inputtedName))
-      alert(allProps[location]["response"](clickCounter, inputtedName));
+      $("#name").hide();
+      $("#communication-output").slideDown();
+      $("#communication-output").text(allProps[location]["response"](clickCounter, inputtedName));
     }
   });
+
 // pops up that goat
   $("#goat").click(function() {
     audio.play();
     $("#goatdiv").slideToggle();
   });
+
 // hologram
   $("#hologram").click(function() {
-    if ($("#hologram-area").html() === ("")) {
-      $("#hologram-area").append("<img src='./img/superman.png'>");
+    $("#communication-output").hide();
+    if ($("#hologram-figure").html() === ("")) {
+      $("#hologram-figure").append("<img src='./img/superman.png'>");
     } else {
-      $("#hologram-area").children().remove();
+      $("#hologram-figure").children().remove();
     }
   });
+
 });
