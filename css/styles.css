@@ -76,35 +76,35 @@ footer {
 #goat {
   border: 3px solid green;
   background-color: lightgreen;
-  height: 35%;
-  width: 50%;
-  margin: 10% 10% 5% 7%;
+  height: 60%;
+  width: 60%;
+  margin: 10% 10% 5% 10%;
 }
 
 
 #hologram {
   border: 3px solid gold;
   background-color: lightyellow;
-  height: 35%;
-  width: 50%;
-  margin: 10% 10% 5% 13%;
+  height: 60%;
+  width: 60%;
+  margin: 50% 10% 5% 25%;
   text-align: center;
 }
 
 #switchColor {
   border: 3px solid blue;
   background-color: lightblue;
-  height: 35%;
-  width: 50%;
-  margin: 10% 10% 0% 23%;
+  height: 60%;
+  width: 60%;
+  margin: 90% 10% 0% 55%;
 }
 
 #communicator {
   border: 3px solid red;
   background-color: pink;
-  height: 35%;
-  width: 50%;
-  margin: 10% 10% 0% 35%;
+  height: 60%;
+  width: 60%;
+  margin: 130% 10% 0% 115%;
   text-align: center;
 }
 
@@ -275,7 +275,7 @@ footer {
 		-o-transition: all .25s ease-in-out;
 		-moz-transition: all .25s ease-in-out;
 		transition: all .25s ease-in-out;
-		box-shadow: 2px 2px 7px rgba(0,0,0,.2);
+		box-shadow: 200px 2px 7px rgba(0,0,0,.2);
 		border-radius: 300px;
 		z-index: 1;
 		border-width: 4px;
