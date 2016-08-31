@@ -30,7 +30,7 @@ body {
   width: 28em;
 }
 
-#biostatus {
+#teleporter {
   margin-right: 12em;
   position: relative;
 }
@@ -50,14 +50,6 @@ footer {
     padding: 15px;
   }
   .row.content {height:auto;}
-}
-
-#teleporter {
-  border: 3px solid red;
-  background-color: pink;
-  height: 15%;
-  width: 50%;
-  margin: 0% 10% 0% 3%;
 }
 
 #goat {
@@ -86,10 +78,10 @@ footer {
 }
 
 #nameInput {
-  border: 3px solid transparent;
-  background-color: transparent;
-  height: 0%;
-  width: 25%;
+  border: 3px solid black;
+  background-color: lightgrey;
+  height: 15%;
+  width: 50%;
   margin: 10% 10% 0% 35%;
   text-align: center;
 }

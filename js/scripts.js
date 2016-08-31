@@ -7,12 +7,12 @@ var spaceProps = {
 }
 var prehistoricProps = {
   background : "url('./img/prehistoric background.jpg')",
-  consoleColor : ["red", "grey"],
+  consoleColor : ["red", "yellow", "orange"],
   response : "You have landed with the dinosaurs.  Watch out!"
 }
 var futureProps = {
   background : "url('./img/futureCity1.jpg')",
-  consoleColor : "black",
+  consoleColor : ["#bbbb77", "#006600", "#178282"],
   reponse : "You are now in the future."
 }
 var allProps = [spaceProps, prehistoricProps, futureProps];
@@ -54,39 +54,63 @@ function greeting(clickCounter, location, inputtedName) {
 
 // switches color of console from grey to red -- ******Will need to update with frontend changes to console layout*******
 function switchColor(color) {
-  $("#trapezoid").css("border-bottom", "25em solid red");
-  $("#triangle-left").css("border-right", "35em solid red");
-  $("#triangle-right").css("border-left", "35em solid red");
+  var toSend = "25em solid " + color;
+  $("#trapezoid2").css("border-bottom", toSend);
 }
 
 $(document).ready(function() {
+  var audio = new Audio('../audio/billygoat.mp3');
   var clickCounter = 0;
   var location = 0;
+  var colorCounter = 0;
 
 // changes color of the console
   $("#switchColor").click(function() {
-    switchColor();
+
+    var newColor = allProps[location]["consoleColor"][colorCounter];
+    switchColor(newColor);
+    if(colorCounter === 2){
+      colorCounter = 0;
+    } else {
+      colorCounter ++;
+    }
   });
 // teleporter changes the background image
   $("#teleporter").click(function() {
-     clickCounter = 0;
-     if (location === 0) {
-       location = 1
-     } else if (location === 1) {
-       location = 2
-     } else if (location === 2) {
-       location = 0
-    }
-    $("body").css("background-image", allProps[location]["background"]);
-  });
+    $("body").css("background-image", "url('./img/hyperspace2.gif')");
+
+    var hyperspeed = setTimeout(postHyperspeed, 2000);
+    function postHyperspeed() {
+      clickCounter = 0;
+      if (location === 0) {
+        location = 1
+      } else if (location === 1) {
+        location = 2
+      } else if (location === 2) {
+        location = 0
+     }
+     $("body").css("background-image", allProps[location]["background"]);
+   }
+   hyperspeed;
+ });
+
+
+
+
+
 // let the alien communications begin
-  $("#nameInput").click(function() {
-    clickCounter += 1;
-    var inputtedName = $("#name").val();
-    alert(greeting(clickCounter, location, inputtedName));
+  $("#communicator").click(function() {
+    if ($("#name").val() === "") {
+      alert("To whom am I speaking?");
+    } else {
+      clickCounter += 1;
+      var inputtedName = $("#name").val();
+      alert(greeting(clickCounter, location, inputtedName));
+    }
   });
 // pops up that goat
   $("#goat").click(function() {
+    audio.play();
     $("#goatdiv").slideToggle();
   });
 // hologram
