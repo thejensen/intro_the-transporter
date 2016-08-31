@@ -66,7 +66,7 @@ var inflateProps = {
       $("#merman").click(function() {
         document.location.reload();
         setTimeout(10000, mermanEscape);
-      }
+      });
     }
   },
   song : "audio/girltalk2.mp3"
