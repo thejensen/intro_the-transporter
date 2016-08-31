@@ -44,9 +44,16 @@ body {
   width: 28em;
 }
 
+#radio-station {
+  border-radius: 40px;
+  opacity: 0.6;
+}
+
 #teleporter {
   margin-right: 12em;
   position: relative;
+  border-radius: 40px;
+  opacity: 0.6
 }
 
 /* Set black background color, white text and some padding */
@@ -173,7 +180,9 @@ footer {
   height: 100%;
 }
 
-#hologram-area * {
+
+
+#hologram-area > * {
   position: absolute;
   margin: 0;
   top: 100%;
@@ -296,6 +305,7 @@ footer {
 		background-color: rgba(239,57,50,1);
 		color: rgba(133,32,28,1);
 		border-color: rgba(133,32,28,.2);
+    opacity: 0.6;
 	}
 
 	a.red:hover {
@@ -307,6 +317,7 @@ footer {
 		background-color: rgba(1,151,171,1);
 		color: rgba(0,63,71,1);
 		border-color: rgba(0,63,71,.2);
+    opacity: 0.6;
 	}
 
 	a.green:hover {
@@ -318,11 +329,24 @@ footer {
 		background-color: rgba(252,227,1,1);
 		color: rgba(153,38,0,1);
 		border-color: rgba(153,38,0,.2);
+    opacity: 0.6;
 	}
 
 	a.yellow:hover {
 		color: rgba(252,227,1,1);
 	}
+
+  a.blue {
+    background-color: rgba(133,32,28,1);
+    color: rgba(133,32,28,1);
+    border-color: rgba(133,32,28,.2);
+    opacity: 0.6;
+  }
+
+  a.blue:hover {
+    color: rgba(133,32,28,1);
+    border-color: rgba(133,32,28,.2);
+  }
 
 	.round span.round {
 		display: block;
@@ -357,4 +381,7 @@ footer {
 	.yellow span {
 		background: rgba(161,145,0,.7);
 
+	}
+  .blue span {
+		background: rgba(0,0,255,.7);
 	}

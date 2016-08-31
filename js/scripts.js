@@ -8,7 +8,7 @@ var spaceProps = {
       $("#creature").fadeIn(9000);
       return "Hello there, " + name + ", my name is Arithna'Jag. Since deep space can be a very lonely place, I am here to keep you company!  I love you!";
     } else if (clickCounter === 2) {
-      return "Welcome to the Teleporter. Your presence has been documented. You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
+      return "You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
     } else if (clickCounter === 3) {
       return "Stop pushing this button " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
     } else {
@@ -77,6 +77,7 @@ $(document).ready(function() {
   var clickCounter = 0;
   var location = 0;
   var colorCounter = 0;
+  var userName = "";
 
 // changes color of the console
   $("#switchColor").click(function() {
@@ -94,8 +95,8 @@ $(document).ready(function() {
   $("#teleporter").click(function() {
     $("#communication-output").hide();
     $("#creature").hide();
-    $("body").css("background-image", "url('./img/hyperspace2.gif')");
-    var hyperspeed = setTimeout(postHyperspeed, 1950);
+    $("body").css("background-image", "url('./img/spiral-hyperspace.gif')");
+    var hyperspeed = setTimeout(postHyperspeed, 1840);
     function postHyperspeed() {
       clickCounter = 0;
       if (location === allProps.length - 1) {
@@ -110,17 +111,21 @@ $(document).ready(function() {
 
 // let the alien communications begin
   $("#communicator").click(function() {
+    $("#hologram-figure").children().remove();
     console.log("button clicked");
-    if ($("#name").val() === "") {
+    if (userName === "") {
       $("#communication-output").slideDown();
-      $("#communication-output").text("To whom am I speaking?");
+      $("#communication-output-text").text("To whom am I speaking?");
       $("#name").show();
+      $("#submit-name").show();
+      $("#dismiss").hide();
+
     } else {
       clickCounter += 1;
-      var inputtedName = $("#name").val();
-      $("#name").hide();
+
+
       $("#communication-output").slideDown();
-      $("#communication-output").text(allProps[location]["response"](clickCounter, inputtedName));
+      $("#communication-output-text").text(allProps[location]["response"](clickCounter, userName));
     }
   });
 
@@ -138,6 +143,21 @@ $(document).ready(function() {
     } else {
       $("#hologram-figure").children().remove();
     }
+  });
+
+  $("#submit-name").click(function(){
+    userName = $("#name").val();
+    if (userName !== "") {
+      $("#submit-name").hide();
+      $("#name").hide();
+      $("#communication-output-text").text("Welcome to the Teleporter " + userName + ". Your presence has been documented.");
+      $("#dismiss").show();
+
+    }
+  })
+
+  $("#dismiss").click(function(){
+    $("#communication-output").hide();
   });
 
 });
