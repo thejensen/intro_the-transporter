@@ -1,3 +1,5 @@
+
+
 // BEGIN BUSINESS LOGIC
 // sets the scenes with window background, console color and communications options when a player is in a certain state
 var spaceProps = {
@@ -14,7 +16,8 @@ var spaceProps = {
     } else {
       return name + ". You have no friends."
     }
-  }
+  },
+  song : "audio/spaceship.mp3"
 }
 var prehistoricProps = {
   background : "url('./img/prehistoric background.jpg')",
@@ -29,7 +32,8 @@ var prehistoricProps = {
     } else {
       return "Much worse."
     }
-  }
+  },
+  song : "audio/juicy.mp3"
 }
 var futureProps = {
   background : "url('./img/futureCity1.jpg')",
@@ -44,7 +48,8 @@ var futureProps = {
     } else {
       return "Keep on clicking if you want, but you are all alone now."
     }
-  }
+  },
+  song : "audio/daftpunk.mp3"
 }
 var inflateProps = {
   background : "url('./img/inflated-city.jpg')",
@@ -60,7 +65,8 @@ var inflateProps = {
     } else {
       return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
     }
-  }
+  },
+  song : "audio/girltalk2.mp3"
 }
 
 var allProps = [spaceProps, prehistoricProps, futureProps, inflateProps];
@@ -73,14 +79,46 @@ function switchColor(color) {
 
 // BEGIN USER INTERFACE LOGIC
 $(document).ready(function() {
-  var audio = new Audio('../audio/billygoat.mp3');
   var clickCounter = 0;
   var location = 0;
   var colorCounter = 0;
   var userName = "";
 
+  var goat = new Audio();
+  goat.src = "audio/billygoat.mp3";
+
+  var warpsound = new Audio();
+  warpsound.src = "audio/warp1.mp3";
+
+  var radioSong = new Audio();
+  radioSong.loop = true;
+  radioSong.src = allProps[0]["song"];
+
+  var spaceOdd1 = new Audio();
+  spaceOdd1.src = "audio/spaceoddity1.mp3";
+
+  var spaceOdd2 = new Audio();
+  spaceOdd2.src = "audio/spaceoddity2.mp3";
+
+
+
+  function playSound(sound){
+    if (!sound.paused) {
+      sound.pause();
+    } else {
+      sound.play();
+    }
+  }
+
 // changes color of the console
   $("#switchColor").click(function() {
+    if (location === 0 || location === 3){
+      if(colorCounter === 0){
+        spaceOdd1.play();
+      } else if (colorCounter === 1){
+        spaceOdd2.play();
+      }
+    }
 
     var newColor = allProps[location]["consoleColor"][colorCounter];
     switchColor(newColor);
@@ -93,6 +131,8 @@ $(document).ready(function() {
 
 // teleporter changes the background image
   $("#teleporter").click(function() {
+    radioSong.pause();
+    warpsound.play();
     $("#communication-output").hide();
     $("#creature").hide();
     $("body").css("background-image", "url('./img/spiral-hyperspace.gif')");
@@ -104,6 +144,7 @@ $(document).ready(function() {
       } else {
         location ++;
       }
+      radioSong.src = allProps[location]["song"];
       $("body").css("background-image", allProps[location]["background"]);
      }
     hyperspeed;
@@ -131,7 +172,7 @@ $(document).ready(function() {
 
 // pops up that goat
   $("#goat").click(function() {
-    audio.play();
+    goat.play();
     $("#goatdiv").slideToggle();
   });
 
@@ -159,5 +200,9 @@ $(document).ready(function() {
   $("#dismiss").click(function(){
     $("#communication-output").hide();
   });
+
+  $("#radio-station").click(function(){
+    playSound(radioSong);
+  })
 
 });
