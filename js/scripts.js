@@ -131,5 +131,16 @@ $(document).ready(function() {
     } else {
       $("#hologram-area").children().remove();
     }
+
+    // $("#radio-station").click(function() {
+    //
+    //   var newColor = allProps[location]["consoleColor"][colorCounter];
+    //   switchColor(newColor);
+    //   if(colorCounter === 2){
+    //     colorCounter = 0;
+    //   } else {
+    //     colorCounter ++;
+    //   }
+    // });
   });
 });
