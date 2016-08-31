@@ -5,7 +5,8 @@ var spaceProps = {
   consoleColor : ["blue", "black", "purple"],
   response : function(clickCounter, name) {
     if (clickCounter === 1) {
-      return "Hello there, " + name + ".";
+      $("#creature").fadeIn(9000);
+      return "Hello there, " + name + ", my name is Arithna'Jag. Since deep space can be a very lonely place, I am here to keep you company!  I love you!";
     } else if (clickCounter === 2) {
       return "Welcome to the Teleporter. Your presence has been documented. You may attempt to command the ship. Trial and error is the most efficient plan your species has ever used to manipulate your environment. Do so now."
     } else if (clickCounter === 3) {
@@ -45,8 +46,24 @@ var futureProps = {
     }
   }
 }
+var inflateProps = {
+  background : "url('./img/inflated-city.jpg')",
+  consoleColor : ["red", "green", "gold"],
+  response : function(clickCounter, name) {
+    if (clickCounter === 1) {
+      return name + ", you 'ave entered the airspace of Zarthyep, the Inflated City. Here you will find the rarest of Spice collected from the dingiest depths of the galaxy."
+    } else if (clickCounter === 2) {
+      return "All human cargo must be submitted for organ harvesting.";
+    } else if (clickCounter === 3) {
+      $("#merman").fadeIn(6000);
+      return "Since you have failed to comply with our regulations, and you persist in being a Geltch-Monger, we have released the Zroto Kliger to destroy you and your vessel!  Prepare to meet your fate " + name + "!!!";
+    } else {
+      return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
+    }
+  }
+}
 
-var allProps = [spaceProps, prehistoricProps, futureProps];
+var allProps = [spaceProps, prehistoricProps, futureProps, inflateProps];
 
 // switches color of console from grey to red -- ******Will need to update with frontend changes to console layout*******
 function switchColor(color) {
@@ -76,6 +93,7 @@ $(document).ready(function() {
 // teleporter changes the background image
   $("#teleporter").click(function() {
     $("#communication-output").hide();
+    $("#creature").hide();
     $("body").css("background-image", "url('./img/hyperspace2.gif')");
     var hyperspeed = setTimeout(postHyperspeed, 1950);
     function postHyperspeed() {
