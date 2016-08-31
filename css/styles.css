@@ -3,16 +3,10 @@ html {
 }
 
 body {
-  background-image: url("../img/inflated-city.jpg");
+  background-image: url("../img/empty-space.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-#window {
-  background-repeat: no-repeat;
-  /*height: 100px; */ will adjust height of window image when console is repositioned
-}
-
 
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
@@ -36,7 +30,7 @@ body {
   width: 28em;
 }
 
-#biostatus {
+#teleporter {
   margin-right: 12em;
   position: relative;
 }
@@ -58,14 +52,6 @@ footer {
   .row.content {height:auto;}
 }
 
-#teleporter {
-  border: 3px solid red;
-  background-color: pink;
-  height: 15%;
-  width: 50%;
-  margin: 0% 10% 0% 3%;
-}
-
 #goat {
   border: 3px solid green;
   background-color: lightgreen;
@@ -74,7 +60,8 @@ footer {
   margin: 10% 10% 5% 7%;
 }
 
-#hologram{
+
+#hologram {
   border: 3px solid gold;
   background-color: lightyellow;
   height: 15%;
@@ -83,7 +70,7 @@ footer {
   text-align: center;
 }
 
-#switchColor{
+#switchColor {
   border: 3px solid blue;
   background-color: lightblue;
   height: 15%;
@@ -91,11 +78,11 @@ footer {
   margin: 10% 10% 0% 23%;
 }
 
-#nameInput {
-  border: 3px solid transparent;
-  background-color: transparent;
-  height: 0%;
-  width: 25%;
+#communicator {
+  border: 3px solid black;
+  background-color: lightgrey;
+  height: 15%;
+  width: 50%;
   margin: 10% 10% 0% 35%;
   text-align: center;
 }
@@ -152,4 +139,32 @@ footer {
  margin-top: 0em;
  margin-left: -50.7em;
  position: fixed;
+
+}
+
+#hologram-area {
+  height: 100%;
+}
+
+#hologram-area * {
+  position: absolute;
+  margin: 0;
+  top: 100%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.7;
+}
+
+#goatdiv {
+  display: none;
+  position: fixed;
+  bottom: 2%;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+#goat-image {
+  border-radius: 600px;
+  border: 10px double black;
 }
