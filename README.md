@@ -28,7 +28,6 @@ _Welcome to The Transporter_:  A fun interactive page, designed to entertain and
 ## Known Bugs
 
   * Some sounds play on top of each other
-  * Purple character blocks transporter button for some screen widths
 
 ## Support and contact details
 If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us!
