@@ -60,13 +60,17 @@ var inflateProps = {
     } else if (clickCounter === 2) {
       return "All human cargo must be submitted for organ harvesting. The spices must spice something, after all.";
     } else if (clickCounter === 3) {
-      $("#merman").fadeIn(2000);
-      return "You have failed to comply. Why must you persist in being a Geltch-Monger? We have released the Zroto Kliger to destroy you and your vessel. Prepare to meet your fate, " + name + ".";
+      var hideCommunicationOutput = setTimeout(communicationOutputHide, 3000);
+      function communicationOutputHide() {
+        $("#merman").click(function () {
+        });
+        $("#communication-output").hide();
+      }
+      $("#merman").fadeIn(7000);
+      return "You have failed to comply. The Zroto Kliger is released to destroy you and your vessel. Good work, " + name + ".";
+      hideMerman;
     } else {
-      $("#merman").click(function() {
-        document.location.reload();
-        setTimeout(10000, mermanEscape);
-      });
+      return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
     }
   },
   song : "audio/girltalk2.mp3"
@@ -137,9 +141,9 @@ $(document).ready(function() {
     radioSong.pause();
     warpsound.play();
     $("#communication-output").hide();
-    $("#creature").hide();
+    $("#merman").hide();
     $("body").css("background-image", "url('./img/spiral-hyperspace.gif')");
-    var hyperspeed = setTimeout(postHyperspeed, 1840);
+    var hyperspeed = setTimeout(postHyperspeed, 2000);
     function postHyperspeed() {
       clickCounter = 0;
       if (location === allProps.length - 1) {
