@@ -6,6 +6,7 @@ var spaceProps = {
   background : "url('./img/empty-space.jpg')",
   consoleColor : ["blue", "black", "purple"],
   response : function(clickCounter, name) {
+    $("#next").show();
     if (clickCounter === 1) {
       $("#creature").fadeIn(9000);
       return "Hello, " + name + ". I am Arithna'Jag. Deep space can be a lonely place. I am here for you.";
@@ -24,6 +25,7 @@ var prehistoricProps = {
   background : "url('./img/prehistoric background.jpg')",
   consoleColor : ["red", "yellow", "orange"],
   response : function(clickCounter, name) {
+    $("#next").show();
     if (clickCounter === 1) {
       return "You seem to be in prehistoric times, " + name + ". Watch out, you are nowhere near the top of the food chain here."
     } else if (clickCounter === 2) {
@@ -41,6 +43,7 @@ var futureProps = {
   background : "url('./img/futureCity1.jpg')",
   consoleColor : ["#bbbb77", "#006600", "#178282"],
   response : function(clickCounter, name) {
+    $("#next").show();
     if (clickCounter === 1) {
       return "You have arrived."
     } else if (clickCounter === 2) {
@@ -58,6 +61,7 @@ var inflateProps = {
   background : "url('./img/inflated-city.jpg')",
   consoleColor : ["red", "green", "gold"],
   response : function(clickCounter, name) {
+    $("#next").show();
     if (clickCounter === 1) {
       return name + ", you have entered the airspace of Zarthyep, the Inflated City. The rarest spices collected from the depths of the galaxy can be found here."
     } else if (clickCounter === 2) {
