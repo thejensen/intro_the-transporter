@@ -8,7 +8,7 @@ var spaceProps = {
   response : function(clickCounter, name) {
     $("#next").show();
     if (clickCounter === 1) {
-      $("#creature").fadeIn(3000);
+      $("#creature").fadeIn(1000);
       return "Hello, " + name + ". I am Arithna'Jag. Deep space can be a lonely place. I am here for you.";
     } else if (clickCounter === 2) {
       return "You may attempt to command the ship. Trial and error is your only option. This pleases me."
