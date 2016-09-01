@@ -12,8 +12,9 @@ var spaceProps = {
     } else if (clickCounter === 2) {
       return "You may attempt to command the ship. Trial and error is your only option. This pleases me."
     } else if (clickCounter === 3) {
-      return "Stop pushing this button " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
+      return "Stop pushing this button, " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
     } else {
+      $("#next").hide();
       return name + ". You have no friends."
     }
   },
@@ -30,6 +31,7 @@ var prehistoricProps = {
     } else if (clickCounter === 3) {
       return "It is probably time to move along, " + name + ". There is not much more to do here. Press the teleport button and see where you end up next.  Maybe it will be better, maybe it will be worse."
     } else {
+      $("#next").hide();
       return "Much worse."
     }
   },
@@ -46,6 +48,7 @@ var futureProps = {
     } else if (clickCounter === 3) {
       return "If it were possible for you to evacuate this Teleporter, " + name + ", I would recommend it. There's a great coffee shop just down the street. But you can't, so..."
     } else {
+      $("#next").hide();
       return "Keep on clicking if you want, but you are all alone now."
     }
   },
@@ -70,6 +73,7 @@ var inflateProps = {
       return "You have failed to comply. The Zroto Kliger is released to destroy you and your vessel. Good work, " + name + ".";
       hideMerman;
     } else {
+      $("#next").hide();
       return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
     }
   },
@@ -108,7 +112,7 @@ $(document).ready(function() {
   spaceOdd2.src = "audio/spaceoddity2.mp3";
 
 
-
+// plays and pauses sound
   function playSound(sound){
     if (!sound.paused) {
       sound.pause();
@@ -164,14 +168,12 @@ $(document).ready(function() {
     if (userName === "") {
       $("#communication-output").slideDown();
       $("#communication-output-text").text("To whom am I speaking?");
+      $("#next").hide();
       $("#name").show();
       $("#submit-name").show();
       $("#dismiss").hide();
-
     } else {
       clickCounter += 1;
-
-
       $("#communication-output").slideDown();
       $("#communication-output-text").text(allProps[location]["response"](clickCounter, userName));
     }
@@ -199,17 +201,24 @@ $(document).ready(function() {
     if (userName !== "") {
       $("#submit-name").hide();
       $("#name").hide();
-      $("#communication-output-text").text("Welcome to the Teleporter " + userName + ". Your presence has been documented.");
+      $("#next").show();
+      $("#communication-output-text").text("Welcome to the Teleporter, " + userName + ". Your presence has been documented.");
       $("#dismiss").show();
-
     }
   })
+
+// continue next inside communications
+  $("#next").click(function() {
+    clickCounter += 1;
+    $("#communication-output-text").text(allProps[location]["response"](clickCounter, userName));
+  });
 
 // dismiss inside communications
   $("#dismiss").click(function(){
     $("#communication-output").hide();
   });
 
+// plays radio
   $("#radio-station").click(function(){
     playSound(radioSong);
   })
