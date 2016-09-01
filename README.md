@@ -6,7 +6,7 @@
 
 ## Description
 
-_Welcome to The Transporter_
+_Welcome to The Transporter_:  A fun interactive page, designed to entertain and amuse.  Click away...
 
 ## Setup/Installation Requirements
 
@@ -31,12 +31,11 @@ _Welcome to The Transporter_
   * Purple character blocks transporter button for some screen widths
 
 ## Support and contact details
-
-_If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us!
+If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us!
   * Sara Jensen: jensen.sara.e@gmail.com
   * Dean Scelza: deanscelza@gmail.com
   * Tim Bourgault: tim.bourgault@gmail.com
-  * Josh Huffman: j.m.huffman@gmail.com_
+  * Josh Huffman: j.m.huffman@gmail.com
 
 ## Technologies Used
 
