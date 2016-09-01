@@ -179,6 +179,31 @@ $(document).ready(function() {
     }
   });
 
+  // submit name
+    $("#submit-name").click(function(){
+      userName = $("#name").val();
+      if (userName !== "") {
+        $("#submit-name").hide();
+        $("#name").hide();
+        $("#communication-output-text").text("Welcome to the Teleporter, " + userName + ". Your presence has been documented.");
+        $("#next").show();
+        $("#dismiss").show();
+      }
+    })
+
+  // continue next inside communications
+    $("#next").click(function() {
+      clickCounter += 1;
+      $("#communication-output-text").text(allProps[location]["response"](clickCounter, userName));
+    });
+
+  // dismiss inside communications
+    $("#dismiss").click(function(){
+      $("#communication-output").hide();
+    });
+
+// END communications
+
 // pops up that goat
   $("#goat").click(function() {
     goat.play();
@@ -193,29 +218,6 @@ $(document).ready(function() {
     } else {
       $("#hologram-figure").children().remove();
     }
-  });
-
-// submit name
-  $("#submit-name").click(function(){
-    userName = $("#name").val();
-    if (userName !== "") {
-      $("#submit-name").hide();
-      $("#name").hide();
-      $("#next").show();
-      $("#communication-output-text").text("Welcome to the Teleporter, " + userName + ". Your presence has been documented.");
-      $("#dismiss").show();
-    }
-  })
-
-// continue next inside communications
-  $("#next").click(function() {
-    clickCounter += 1;
-    $("#communication-output-text").text(allProps[location]["response"](clickCounter, userName));
-  });
-
-// dismiss inside communications
-  $("#dismiss").click(function(){
-    $("#communication-output").hide();
   });
 
 // plays radio
