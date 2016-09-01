@@ -8,18 +8,19 @@ var spaceProps = {
   response : function(clickCounter, name) {
     $("#next").show();
     if (clickCounter === 1) {
-      $("#creature").fadeIn(9000);
+      $("#creature").fadeIn(3000);
       return "Hello, " + name + ". I am Arithna'Jag. Deep space can be a lonely place. I am here for you.";
     } else if (clickCounter === 2) {
       return "You may attempt to command the ship. Trial and error is your only option. This pleases me."
     } else if (clickCounter === 3) {
-      return "Stop pushing this button, " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
+      return "I told you to move on, " + name + ". There will be severe repercussions if you fail to comply. Try some of the other buttons."
     } else {
       $("#next").hide();
       return name + ". You have no friends."
     }
   },
-  song : "audio/spaceship.mp3"
+  song : "audio/spaceship.mp3",
+  hologram : "<img src='./img/superman.png'>"
 }
 var prehistoricProps = {
   background : "url('./img/prehistoric background.jpg')",
@@ -37,7 +38,8 @@ var prehistoricProps = {
       return "Much worse."
     }
   },
-  song : "audio/juicy.mp3"
+  song : "audio/juicy.mp3",
+  hologram : "<img src='./img/horse-hologram.gif'>"
 }
 var futureProps = {
   background : "url('./img/futureCity1.jpg')",
@@ -55,7 +57,8 @@ var futureProps = {
       return "Keep on clicking if you want, but you are all alone now."
     }
   },
-  song : "audio/daftpunk.mp3"
+  song : "audio/daftpunk.mp3",
+  hologram : "<img src='./img/face-hologram.gif'>"
 }
 var inflateProps = {
   background : "url('./img/inflated-city.jpg')",
@@ -75,13 +78,14 @@ var inflateProps = {
       }
       $("#merman").fadeIn(7000);
       return "You have failed to comply. The Zroto Kliger is released to destroy you and your vessel. Good work, " + name + ".";
-      hideMerman;
+      hideCommunicationOutput;
     } else {
       $("#next").hide();
       return "Quit mashing buttons, " + name + ". You have no friends here. Leave, n00b."
     }
   },
-  song : "audio/girltalk2.mp3"
+  song : "audio/girltalk2.mp3",
+  hologram : "<img src='./img/thedoctor-hologram.gif'>"
 }
 
 var allProps = [spaceProps, prehistoricProps, futureProps, inflateProps];
@@ -146,10 +150,13 @@ $(document).ready(function() {
 
 // teleporter changes the background image
   $("#teleporter").click(function() {
+    $("#teleporter").hide();
     radioSong.pause();
     warpsound.play();
     $("#communication-output").hide();
     $("#merman").hide();
+    $("#hologram-figure").children().remove();
+    $("#goatdiv").slideUp();
     $("body").css("background-image", "url('./img/spiral-hyperspace.gif')");
     var hyperspeed = setTimeout(postHyperspeed, 2000);
     function postHyperspeed() {
@@ -167,6 +174,7 @@ $(document).ready(function() {
 
 // let the alien communications begin
   $("#communicator").click(function() {
+    $("#teleporter").show();
     $("#hologram-figure").children().remove();
     console.log("button clicked");
     if (userName === "") {
@@ -218,7 +226,7 @@ $(document).ready(function() {
   $("#hologram").click(function() {
     $("#communication-output").hide();
     if ($("#hologram-figure").html() === ("")) {
-      $("#hologram-figure").append("<img src='./img/superman.png'>");
+      $("#hologram-figure").append(allProps[location]["hologram"]);
     } else {
       $("#hologram-figure").children().remove();
     }
