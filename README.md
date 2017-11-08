@@ -11,9 +11,9 @@ _Welcome to The Transporter_:  A fun interactive page, designed to entertain and
 ## Setup/Installation Requirements
 
 In your terminal, run the following commands: 
-  git clone https://github.com/thejensen/intro_the-transporter.git
-  cd intro_the_transporter
-  open index.html
+  * git clone https://github.com/thejensen/intro_the-transporter.git
+  * cd intro_the_transporter
+  * open index.html
 
   Then, in your browser, zoom out to 75% to get the console into view ;) 
 
