@@ -10,8 +10,12 @@ _Welcome to The Transporter_:  A fun interactive page, designed to entertain and
 
 ## Setup/Installation Requirements
 
-  * Clone https://github.com/thejensen/TheTransporter/ onto your computer
-  * Open index.html with your browser of choice
+In your terminal, run the following commands: 
+  git clone https://github.com/thejensen/intro_the-transporter.git
+  cd intro_the_transporter
+  open index.html
+
+  Then, in your browser, zoom out to 75% to get the console into view ;) 
 
 ## Specifications
 
@@ -28,6 +32,7 @@ _Welcome to The Transporter_:  A fun interactive page, designed to entertain and
 ## Known Bugs
 
   * Some sounds play on top of each other
+  * The console is only available at 75%, or until you get the console at the bottom of the screen into view. 
 
 ## Support and contact details
 If you run into any issues or have questions, ideas or concerns, or want to make a contribution to the code, contact us!
