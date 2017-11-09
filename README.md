@@ -10,10 +10,7 @@ _Welcome to The Transporter_:  A fun interactive page, designed to entertain and
 
 ## Setup/Installation Requirements
 
-In your terminal, run the following commands: 
-  * mkdir transporter
-  * cd transporter
-  * git init
+In your terminal, navigate to the folder you'd like The Transporter project, and copy/paste/run the following commands: 
   * git clone https://github.com/thejensen/intro_the-transporter.git
   * cd intro_the_transporter
   * open index.html
