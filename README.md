@@ -15,7 +15,7 @@ In your terminal, navigate to the folder you'd like The Transporter project, and
   * cd intro_the_transporter
   * open index.html
 
-  Then, in your browser, zoom out to 75% to get the console into view ;) 
+Then, in your browser, zoom out to at least 75%, might be more like 50% to get the console into view ;) 
 
 ## Specifications
 
